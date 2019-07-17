@@ -10,7 +10,7 @@ function test () {
     local all_line_cnt=`cat ${dir}/${file} | grep -c ^`
     echo "file: ${file}, word count: ${all_line_cnt}" 
 
-    local ng_line=`cat ${dir}/${file} | grep -n -v ".\+"$'\t'"[ぁ-ん]\+"$'\t'".\+"`
+    local ng_line=`cat ${dir}/${file} | grep -n -v ".\+"$'\t'".\+"$'\t'".\+"`
     if [ `echo -n "${ng_line}" | grep -c ^` -eq 0 ]; then
       echo "  test ok"
     else
